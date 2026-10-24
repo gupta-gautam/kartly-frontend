@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import ProductCard from '../components/ProductCard'
+import BudgetMeter from '../components/BudgetMeter'
 
 function Shop(){
 
@@ -26,6 +27,7 @@ function Shop(){
     return(
         <div className="p-8">
             <h1 className= "text-3xl font-bold mb-4">Shop</h1>
+            <BudgetMeter/>
             <button className = {`border rounded px-3 py-1 mr-2 mb-4 ${selectedCategory === null ? 'bg-black text-white' : ''}`}
             onClick={() =>
                 setSelectedCategory(null)}>All</button>

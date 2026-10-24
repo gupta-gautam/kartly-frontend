@@ -10,6 +10,16 @@ export function CartProvider({children}){
         localStorage.setItem('cart', JSON.stringify(cart))
    },[cart])
 
+ const total = cart.reduce((sum, item) => sum + Number(item.price * item.quantity), 0)
+
+    const [budget,setBudget] = useState(() => {
+           const saved = localStorage.getItem('budget')
+           return saved ? Number(saved) : 0
+           })
+       useEffect (() => {
+           localStorage.setItem('budget',budget)
+           },[budget])
+
     function addToCart(product){
         const existing = cart.find(item => item.productId === product.productId)
         if(existing){
@@ -41,7 +51,7 @@ export function CartProvider({children}){
         }
 
     return(
-        <CartContext.Provider value={{cart,addToCart,removeFromCart,decreaseQuantity}}>
+        <CartContext.Provider value={{cart,addToCart,removeFromCart,decreaseQuantity,budget,setBudget,total}}>
             {children}
             </CartContext.Provider>
         )
