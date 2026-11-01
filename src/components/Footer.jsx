@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <footer className = "p-4 text-center text-sm text-gray-500">
+        <footer className="text-center text-gray-600 p-4 pb-16">
             © 2026 Kartly
             </footer>
         )
