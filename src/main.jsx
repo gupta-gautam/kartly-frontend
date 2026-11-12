@@ -6,6 +6,8 @@ import './index.css'
 import App from './App.jsx'
 import {CartProvider} from './context/CartContext'
 import {CompareProvider} from './context/CompareContext'
+import { AuthProvider } from './context/AuthContext'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
