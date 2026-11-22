@@ -7,6 +7,8 @@ import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
 import CompareTray from './components/CompareTray'
 import Compare from './pages/Compare'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path ="/product/:productId" element={<ProductDetails/>}/>
           <Route path ="/cart" element={<Cart/>}/>
           <Route path ="/compare" element={<Compare/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register />} />
           </Routes>
           <CompareTray />
           <Footer/>

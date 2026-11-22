@@ -1,13 +1,13 @@
 import {useState,useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import axios from 'axios'
+import api from '../api';
 
 function ProductDetails(){
     const{productId} = useParams()
     const[product,setProduct] = useState(null)
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/public/products/${productId}`)
+        api.get(`/api/public/products/${productId}`)
         .then(response =>{
             setProduct(response.data)
            } )

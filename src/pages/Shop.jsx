@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import api from '../api';
 import ProductCard from '../components/ProductCard'
 import BudgetMeter from '../components/BudgetMeter'
 
@@ -9,13 +9,13 @@ function Shop(){
     const[selectedCategory,setSelectedCategory] = useState(null)
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:8080/api/public/products')
+        api.get('/api/public/products')
         .then(response => {
             setProducts(response.data)
             })
         },[])
     useEffect(() => {
-        axios.get('http://localhost:8080/api/public/categories')
+        api.get('http://localhost:8080/api/public/categories')
         .then(response => {
             setCategories(response.data)
             })
