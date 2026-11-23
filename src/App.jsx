@@ -9,6 +9,7 @@ import CompareTray from './components/CompareTray'
 import Compare from './pages/Compare'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -18,10 +19,12 @@ function App() {
           <Route path ="/" element ={<Home />} />
           <Route path= "/shop" element ={<Shop/>} />
           <Route path ="/product/:productId" element={<ProductDetails/>}/>
-          <Route path ="/cart" element={<Cart/>}/>
+
           <Route path ="/compare" element={<Compare/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          <Route path="*" element={<h1 className="p-8">Page not found</h1>} />
           </Routes>
           <CompareTray />
           <Footer/>
